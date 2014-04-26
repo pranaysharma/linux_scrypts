@@ -22,14 +22,12 @@ sudo apt-get install -y gufw
 
 
 #### install Chrome ######
-sudo apt-get install libxss1
+sudo apt-get install -y libxss1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 
 #### TLP/Powersaving ####
-sudo add-apt-repository ppa:linrunner/tlp
-apt-get update
-apt-get install tlp tlp-rdw
+sudo add-apt-repository -y ppa:linrunner/tlp && sudo apt-get update && sudo apt-get install tlp tlp-rdw
 nano /etc/default/tlp
 
 #Change the following values.
@@ -42,15 +40,11 @@ nano /etc/default/tlp
 #RESTORE_DEVICE_STATE_ON_STARTUP=1
 
 #### Shutdown, Restart, options from Dash  ####
-sudo add-apt-repository -y ppa:atareao/atareao
-sudo apt-get update
-sudo apt-get install power-commands
+sudo add-apt-repository -y ppa:atareao/atareao && sudo apt-get update && sudo apt-get install power-commands
 
 #####   Auto control keyboard brightness #####
 #      http://pof.eslack.org/2011/12/04/lightum-auto-adjust-keyboard-brightness-on-macbook/
-sudo add-apt-repository ppa:poliva/lightum-mba
-sudo apt-get update
-sudo apt-get install lightum
+sudo add-apt-repository ppa:poliva/lightum-mba && sudo apt-get update && sudo apt-get install lightum
 
 #####   Auto screen  brightness   http://www.matrix44.net/blog/?p=963
 
@@ -65,10 +59,8 @@ sudo apt-get install -y terminator screen flashplugin-installer ubuntu-restricte
 sudo apt-get install -y nautilus-open-terminal
 
 ##### Skype #####
-sudo apt-get install -y libqt4-dbus libqt4-network libqt4-xml libasound2
-wget http://www.skype.com/go/getskype-linux-beta-ubuntu-64
-sudo dpkg -i getskype-*
-sudo apt-get -f install
+sudo apt-get install -y libqt4-dbus libqt4-network libqt4-xml libasound2 && wget http://www.skype.com/go/getskype-linux-beta-ubuntu-64
+sudo dpkg -i getskype-* && sudo apt-get -f install
 
 #### FTP and server related ####
 sudo apt-get install -y filezilla filezilla-common
