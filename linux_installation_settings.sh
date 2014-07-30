@@ -200,9 +200,9 @@ sudo apt-get install -y libqt4-dev libgtk2.0-dev
 
 
 
-##setting up aliases
+##setting up aliases (ENTER CORRECT USERNAME and correct path to the alias )
 	#for the workspace
-	#workspace=/media/pranay/6A88-A62A/workspace
+	#workspace=/media/USERNAMEHERE/6A88-A62A/workspace
 	#alias workspace="cd $workspace"
 
 
