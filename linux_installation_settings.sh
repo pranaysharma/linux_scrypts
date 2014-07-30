@@ -56,6 +56,13 @@ sudo apt-get install -y bcmwl-kernel-source macfanctld
 #### install linux headers and source ####
 apt-get install build-essential linux-source linux-headers-`uname -r`
 
+
+#### Nvidia Drivers Installation: This will check for any updated version and 'a' #### 
+####  is to accept the terms and conditions 			                  ####
+wget http://us.download.nvidia.com/XFree86/Linux-x86_64/340.24/NVIDIA-Linux-x86_64-340.24.run
+sudo NVIDIA-Linux-x86_64-340.24.run --update -a
+
+ 
 #### disable online search for Dash ######
 wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 
