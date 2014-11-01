@@ -69,6 +69,9 @@ screen -r s0
 
 
 #############################LVM ##################################
+#useful LVM related links online: 
+#1.For Fresh Installation:  http://swaeku.github.io/blog/2013/03/25/install-ubuntu-desktop-on-lvm-partitions/
+#2.For generic use:        http://www.linuxuser.co.uk/features/resize-your-disks-on-the-fly-with-lvm 
 #extend lvm(vg_data-lvhome) by 10G
 sudo lvextend -L+10G /dev/mapper/vg_data-lvhome
 #now the filesystem has to be resized
