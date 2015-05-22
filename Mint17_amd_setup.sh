@@ -96,15 +96,26 @@ sudo apt-fast -y install xvba-va-driver
 #sudo echo -e "EnableLinuxHWVideoDecode = 1\nOverrideGPUValidation = 1" | sudo tee /etc/adobe/mms.cfg
 
 #####Python related #####
-sudo apt-fast install python-dev python-pip
-sudo pip install virtualenv
-#to create a virtual env 
-mkdir name-of-virtual-env
-#to initialize e.g. virtualenv ~/workspace/rango/
-virtualenv ~/path-to-(name-of-virtual-env)
-#to start the virtualenv source ~/workspace/rango/bin/activate
-source ~/path-to-(name-of-virtual-env)/bin/activate
+#install pip and python-dev
+sudo apt-fast install -y python-dev python-pip
 
+#install supervisord
+sudo apt-fast -y install supervisor
+
+#install virtual env
+sudo pip install virtualenv
+#virtual env wrapper 
+sudo pip install virtualenvwrapper
+	#setup virtualenv
+	test -d ~/$VIRTUAL_ENV_FILE_NAME || mkdir ~/$VIRTUAL_ENV_FILE_NAME 
+	#check if .bashrc is present first
+	test -d $BASHRC_FILE_NAME || touch $BASHRC_FILE_NAME
+	echo "#setup virtual env" >> ~/.bashrc
+	echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
+	#run the virtual env activation script when the shell starts.
+	#do which virtualenvwrapper_lazy.sh to find the below path
+	echo "source /usr/local/bin/virtualenvwrapper_lazy.sh" >> ~/.bashrc
+source ~/.bashrc
 
 #### install Chrome ######
 sudo apt-fast install -y libxss1
